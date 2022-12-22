@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UGBod18kes2eNWZJKbhbj+zIsEZGJCtPBupkK9/S8KN1Bs0kkDmRJaE508fKjWbqhdrkBmf6jHuS+KL0fBaGyw==",
+  "dgSpecHash": "OY7bmPLKZg7c83Xo1733ULTwrqekttKSHnjYOWdGrtAELyx7cLPu+D1Dau76TzUIln98hCpFJLMR1q6o/UUnpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock Management System\\Stock Management System.csproj",
+  "projectFilePath": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock-Management-\\Stock Management System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OliverDennison\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\OliverDennison\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

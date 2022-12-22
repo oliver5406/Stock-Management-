@@ -6,20 +6,14 @@ using System.Threading.Tasks;
 
 namespace Stock_Management_System
 {
-    internal class ComponentField
+    public class ComponentField
     {
-        private int stockID;
         private string productName;
         private string description;
         private string catergory;
         private int stockLevel;
         private int minStockLevel;
 
-        public int StockID
-        {
-            get { return stockID; }
-            set { stockID = value; }
-        }
         public string ProductName
         {
             get { return productName; }
@@ -47,9 +41,8 @@ namespace Stock_Management_System
         }
 
         public ComponentField(
-            int sID, string name, string description, string catergory, int stockLevel, int minStockLevel)
+            string name, string description, string catergory, int stockLevel, int minStockLevel)
         {
-            StockID = sID;
             ProductName = name;
             Description = description;
             Catergory = catergory;

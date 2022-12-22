@@ -1220,11 +1220,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock Management System\\Stock Management System.csproj",
+      "projectUniqueName": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock-Management-\\Stock Management System.csproj",
       "projectName": "Stock Management System",
-      "projectPath": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock Management System\\Stock Management System.csproj",
+      "projectPath": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock-Management-\\Stock Management System.csproj",
       "packagesPath": "C:\\Users\\OliverDennison\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock Management System\\obj\\",
+      "outputPath": "C:\\Users\\OliverDennison\\OneDrive - Magway Limited\\Desktop\\Softwares\\Personal repos\\Stock-Management-\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\OliverDennison\\AppData\\Roaming\\NuGet\\NuGet.Config",
