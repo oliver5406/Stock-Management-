@@ -10,58 +10,69 @@ using System.Xml.Linq;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to the Stock Mangement System!");
-        Console.WriteLine("Please select an operation you would like to perform:");
-        Console.WriteLine(
-            "1: Add a component to the system" +
-            "\n2: Update a field for a specifc component");
-
-        int optionSelected = int.Parse(Console.ReadLine());
-
-        switch (optionSelected)
+        bool running = true;
+        while (running == true)
         {
-            case 1:
-                Console.WriteLine("1");
-                break;
-            case 2:
-                Console.WriteLine("2");
-                break;
-            default:
-                Console.WriteLine("Invalid Number");
-                break;
+            Console.WriteLine("Welcome to the Stock Mangement System!");
+            Console.WriteLine("Please select an operation you would like to perform:");
+            Console.WriteLine(
+                "1: Add a component to the system" +
+                "\n2: Update a field for a specifc component" +
+                "\n3: Quit");
+
+            int optionSelected = int.Parse(Console.ReadLine());
+            List<ComponentField> components = new List<ComponentField>();
+
+            switch (optionSelected)
+            {
+                case 1:
+                    Console.WriteLine("Enter a Component:\n" +
+                        "Name | Description | Catergory | Stock Level | Minimum Stock Level");
+                    string enteredComponent = Console.ReadLine();
+                    char[] delimiters = { ',', '|' };
+                    string[] partField = enteredComponent.Split(delimiters);
+
+                    //ComponentField Screw = new ComponentField(
+                    //    name: partField[0], description: partField[1],
+                    //    catergory: partField[2], stockLevel: int.Parse(partField[3]), minStockLevel: int.Parse(partField[4]));
+                    ComponentField Bolt = new ComponentField(
+                        name: "Bolt", description: "A small metal fastener.",
+                        catergory: "Hardware", stockLevel: 300, minStockLevel: 100);
+                    components.Add(Bolt);
+                    Console.WriteLine("Components Added");
+                    break;
+                case 2:
+                    Console.WriteLine("2");
+                    break;
+                case 3:
+                    running = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid Number");
+                    break;
+            }
+
+
+            if (File.Exists("database.db"))
+            {
+                File.Delete("database.db");
+            }
+            SQLiteConnection sqlite_conn;
+            sqlite_conn = SQLFunctions.CreateConnection();
+            SQLFunctions.CreateTable(sqlite_conn);
+            SQLFunctions.InsertData(sqlite_conn, components);
+            SQLFunctions.ReadData(sqlite_conn);
+
+
+
+            updateField(sqlite_conn, "Product_Catergory", "H");
+            SQLFunctions.ReadData(sqlite_conn);
+            sqlite_conn.Close();
         }
-        ComponentField Screw = new ComponentField(
-            name: "Screw", description: "A small metal fastener.",
-            catergory: "Hardware", stockLevel: 100, minStockLevel: 50);
-        ComponentField Bolt = new ComponentField(
-            name: "Bolt", description: "A small metal fastener.",
-            catergory: "Hardware", stockLevel: 300, minStockLevel: 100);
 
-        List<ComponentField> components = new List<ComponentField>();
-
-        components.Add(Screw);
-        components.Add(Bolt);
-
-
-        if (File.Exists("database.db"))
-        {
-            File.Delete("database.db");
-        }
-        SQLiteConnection sqlite_conn;
-        sqlite_conn = SQLFunctions.CreateConnection();
-        SQLFunctions.CreateTable(sqlite_conn);
-        SQLFunctions.InsertData(sqlite_conn, components);
-        SQLFunctions.ReadData(sqlite_conn);
-
-
-
-        updateField(sqlite_conn, "Product_Catergory", "H");
-        SQLFunctions.ReadData(sqlite_conn);
-        sqlite_conn.Close();
     }
-
     public static void updateField(SQLiteConnection conn, string column, object value)
     {
         SQLiteCommand sqlite_cmd;

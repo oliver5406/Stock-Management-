@@ -49,6 +49,11 @@ namespace Stock_Management_System
             StockLevel = stockLevel;
             MinStockLevel = minStockLevel;
         }
+
+        public void RunAddComponent()
+        {
+
+        }
     }
 }
 
